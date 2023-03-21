@@ -1,0 +1,12 @@
+
+<h1>forget your password</h1>
+<%= form_with model: @user do |form| %>
+<%= form.label :email %>
+<%= form.text_field :email,placeholder:"raghav@gmail.com" %><br> <br> 
+<div>
+<%= form.submit "Reset Password", class: "btn btn-primary" %>
+</div>
+<% end %>
+ 
+
+

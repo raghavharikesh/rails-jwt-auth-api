@@ -1,0 +1,18 @@
+<h3 style="color:MediumSeaGreen;"><%= notice %></h3>
+<h1>Log in</h1>
+
+<%= form_with(url: login_path, scope: :session, local: true) do |form| %>
+<%#= form.label :username%><br> 
+<%#= form.text_field :username,:placeholder => 'username'%><br>
+<%= form.label :email %><br>
+<%= form.text_field :email,placeholder:"raghav@gmail.com" %><br> 
+<%= form.label :password%><br>  
+<%= form.password_field :password,:placeholder => 'password'%><br>
+<div>
+<%= form.submit "Log in", class: "btn btn-primary" %>
+</div>
+<% end %><br>
+<%= button_to "forget your password",password_reset_path, method: :get%><br>
+ <p>New user? <%= button_to "Sign up now!", new_user_path, method: :get %></p> 
+
+<%= button_to "BACK", root_path , method: :get %>

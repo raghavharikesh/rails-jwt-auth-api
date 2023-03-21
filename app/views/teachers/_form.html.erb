@@ -1,0 +1,17 @@
+<%= form_with model: [ @user, @teacher.build ] do |form|%>
+<div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name,:placeholder => 'Name' %>
+  </div>
+
+  <div>
+    <%= form.label :subject %><br>
+    <%= form.text_field :subject,:placeholder => 'Subject' %>
+  </div>
+
+  <div><br>
+    <%= form.submit  %>
+  </div>
+
+<% end %>
+

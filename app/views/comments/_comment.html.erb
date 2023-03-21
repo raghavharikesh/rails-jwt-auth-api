@@ -1,0 +1,14 @@
+<h2>Comments</h2>
+<% @teacher.comments.each do |comment| %>
+  <div>
+    <strong>Commenter:</strong>
+    <%= comment.commenter %>
+  </div>
+
+  <div>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </div>
+<% end %> 
+
+<%= link_to "Delete Comment", [comment.teacher, comment], data: {turbo_method: :delete,turbo_confirm: "Are you sure?"} %>

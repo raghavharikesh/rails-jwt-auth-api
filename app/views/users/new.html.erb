@@ -1,0 +1,11 @@
+<h1>Sign Up</h1>
+<%= form_with(model: @user, local: true) do |form| %>  
+<%= form.label :username%><br> 
+<%= form.text_field :username,:placeholder => 'username'%><br>
+<%= form.label :email %><br>
+<%= form.text_field :email,placeholder:"raghav@gmail.com" %><br> 
+<%= form.label :password%><br>  
+<%= form.password_field :password,:placeholder => 'password'%><br>  <br>
+<%= form.submit "SIGN UP"%>
+<%end%><br>
+<%= button_to "BACK", root_path , method: :get %>

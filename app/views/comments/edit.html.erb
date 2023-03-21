@@ -1,0 +1,14 @@
+<h2> Update comment</h2>
+<%= form_with  model: [@teacher,@comment] do|form|%>
+  <div>
+    <%= form.label :commenter %><br>
+    <%= form.text_field :commenter,:placeholder => 'commenter' %>
+  </div>
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body,:placeholder => 'comment'%>
+  </div>
+   <div>
+    <%= form.submit "update" %>
+   </div>
+<% end %>

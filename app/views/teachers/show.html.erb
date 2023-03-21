@@ -1,0 +1,67 @@
+<h3 style="color:MediumSeaGreen;"><%= notice %></h3>
+
+
+<h1>Teacher Information</h1>
+<table>
+  <thead> 
+  	<style>
+      table {border-collapse: separate;border-spacing: 0 15px;}
+      th {background-color: #4287f5;color: white;}
+      th,
+      td{width: 150px;text-align: center;border: 1px solid black;padding:5px;}   
+    </style>
+    </thead>
+    <tr>
+      <th>NAME</th>
+      <th>SUBJECT</th>
+      <!-- <th colspan="20"></th> -->
+    </tr>
+    <tbody>
+       <tr>
+       <td><%= @teacher.name %></td>
+       <td> <%= @teacher.subject %></td>
+      </tr>
+     </tbody>
+</table>
+
+
+
+<h2>Comments</h2>
+<% @teacher.comments.each do |comment| %>
+  <div>
+    <strong>Commenter:</strong>  <%= comment.commenter %>
+    </div>
+<div>
+    <strong>Comment:</strong> <%= comment.body %>
+    </div><br>
+    <%= link_to "Destroy Comment", [comment.teacher, comment], data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                } %>
+  <br>
+
+    <%= link_to "UPDATE", edit_teacher_comment_path( @teacher,comment) %><br>
+
+<% end %> 
+ 
+
+
+<h2>Add a comment:</h2>
+
+<%= form_with model: [@teacher,@teacher.comments.build] do|form|%>
+  <div>
+    <%= form.label :commenter %><br>
+    <%= form.text_field :commenter,:placeholder => 'commenter' %>
+  </div>
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body ,:placeholder => 'comment'%>
+  </div>
+   <div>
+    <%= form.submit %>
+   </div>
+<% end %>
+ <br>
+<%= button_to "BACK", teachers_path , method: :get %><br>
+<%#= link_to "Log out", logout_path, method: :delete %>
+<%= button_to "Log out", logout_path, method: :get%><br>
