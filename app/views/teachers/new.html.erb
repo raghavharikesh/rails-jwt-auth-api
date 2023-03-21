@@ -1,22 +1,3 @@
-<h1>new teacher </h1>
-<%= form_with (url: new_user_teacher_path, scope: :teacher, local: true) do |form|%>
-<div>
-    <%= form.label :name %><br>
-    <%= form.text_field :name,:placeholder => 'Name' %>
-  </div>
+<%= render "form", teacher:@teacher %>
 
-  <div>
-    <%= form.label :subject %><br>
-    <%= form.text_field :subject,:placeholder => 'Subject' %>
-  </div>
-
-  <div><br>
-    <%= form.submit  %>
-  </div>
-
-<% end %>
-
-
-<%#= render "form", teacher:@teacher %>
-
-<%= button_to "BACK", user_teachers_path ,method: :get%>
+<%= button_to "BACK",teachers_path ,method: :get%>

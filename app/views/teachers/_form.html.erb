@@ -1,4 +1,4 @@
-<%= form_with model: [ @user, @teacher.build ] do |form|%>
+<%= form_with model:@teacher do |form|%>
 <div>
     <%= form.label :name %><br>
     <%= form.text_field :name,:placeholder => 'Name' %>

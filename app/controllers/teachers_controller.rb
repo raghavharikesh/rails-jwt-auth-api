@@ -1,14 +1,12 @@
 class TeachersController < ApplicationController
-	   before_action :set_teacher  ,only: [:edit,:update,:show,:destroy]
+	  # before_action :set_teacher, only: [:edit,:update,:show,:destroy]
 
 	def index
 		@teachers=Teacher.all
 	end
     
 	def show
-        binding.pry
-        @user = User.find(params[:user_id])
-        @teacher = @user.teachers.find(:id)
+        @teacher = Teacher.find(params[:id])
 	end
     
     def new
@@ -16,27 +14,30 @@ class TeachersController < ApplicationController
     end
 
     def create
-        @user = User.find(params[:user_id])
-    	@teacher=@user.teachers.create(teacher_params)
+        
+    	@teacher=Teacher.create(teacher_params)
     	if @teacher.save
-    		redirect_to teacher_path(@teacher), notice: "Teacher has been created succesfully"
+    		redirect_to teachers_path, notice: "Teacher has been created succesfully"
     	else
     		render :new
     	end
     end
 
     def edit
+        @teacher = Teacher.find(params[:id])
     end
 
     def update
+        @teacher = Teacher.find(params[:id])
         if @teacher.update(teacher_params)
-        	redirect_to @teacher , notice: "Teacher has been update succesfully"
+        	redirect_to teachers_path , notice: "Teacher has been update succesfully"
         else
         	render :edit 
         end
     end
 
     def destroy
+        @teacher = Teacher.find(params[:id])
     @teacher.destroy
     redirect_to teachers_path, notice: "Teacher has been delete succesfully"
     end
@@ -47,7 +48,7 @@ class TeachersController < ApplicationController
     end
     
     def set_teacher
-       @teacher = Teacher.find(params[:id])
+      # @teacher = Teacher.find(params[:id])
     end
 
 end

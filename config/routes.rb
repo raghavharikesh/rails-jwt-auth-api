@@ -13,8 +13,8 @@ Rails.application.routes.draw do
     get 'password/reset/edit' , to: 'password_resets#edit'   
     patch 'password/reset/edit' , to: 'password_resets#update' 
   resources :users 
-    resources :teachers do
-    	resources :comments
+  resources :teachers do
+    resources :comments
   
-     end  
+    end  
 end

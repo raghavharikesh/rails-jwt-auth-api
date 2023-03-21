@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-	has_many :teachers
+	
 	validates :username, presence:true#,uniqueness: true
 	validates :password,presence:true#,uniqueness: true
 	has_secure_password
