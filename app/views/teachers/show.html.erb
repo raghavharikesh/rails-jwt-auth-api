@@ -24,26 +24,37 @@
      </tbody>
 </table>
 
-
-
-<h2>Comments</h2>
-<% @teacher.comments.each do |comment| %>
-  <div>
-    <strong>Commenter:</strong>  <%= comment.commenter %>
-    </div>
-<div>
-    <strong>Comment:</strong> <%= comment.body %>
-    </div><br>
-    <%= link_to "Destroy Comment", [comment.teacher, comment], data: {
+<h1>Comment Related TO Teacher</h1>
+<table>
+  <thead> 
+    <style>
+      table {border-collapse: separate;border-spacing: 0 15px;}
+      th {background-color: #4287f5;color: white;}
+      th,
+      td{width: 150px;text-align: center;border: 1px solid black;padding:5px;}   
+    </style>
+    </thead>
+    <tr>
+      <th>Commenter:</th>
+      <th>Comment:</th>
+      <th>Update</th>
+      <th>Delete</th>
+      <!-- <th colspan="20"></th> -->
+    </tr>
+    <tbody>
+      <% @teacher.comments.each do |comment| %>
+       <tr>
+       <td><%= comment.commenter %></td>
+       <td> <%= comment.body %></td>
+       <td> <%= link_to "UPDATE", edit_teacher_comment_path( @teacher,comment) %><br></td>
+       <td> <%= link_to "Destroy Comment", [comment.teacher, comment], data: {
                   turbo_method: :delete,
                   turbo_confirm: "Are you sure?"
-                } %>
-  <br>
-
-    <%= link_to "UPDATE", edit_teacher_comment_path( @teacher,comment) %><br>
-
-<% end %> 
- 
+                } %></td>
+      </tr>
+      <% end %>
+     </tbody>
+</table>
 
 
 <h2>Add a comment:</h2>
