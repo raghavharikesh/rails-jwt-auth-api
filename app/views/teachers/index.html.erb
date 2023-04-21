@@ -27,7 +27,7 @@
         <td><%= link_to "Show", teacher_path(teacher.id), method: :get %></td>
         <td><%= button_to "Update", edit_teacher_path(teacher.id) ,method: :get%></td>
         <td>
-                  <%= link_to "delete",teacher_path(teacher.id), data: {
+          <%= link_to "delete",teacher_path(teacher.id), data: {
                   turbo_method: :delete,
                   turbo_confirm: "Are you sure?"
                 } %></td>

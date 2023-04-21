@@ -38,7 +38,7 @@ class TeachersController < ApplicationController
 
     def destroy
         @teacher = Teacher.find(params[:id])
-    @teacher.destroy
+        @teacher.destroy
     redirect_to teachers_path, notice: "Teacher has been delete succesfully"
     end
 
