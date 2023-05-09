@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  get '/articles/:id/show', to: 'articles#show', as: 'article'
+  post '/articles', to: 'articles#create'
+  root to: 'articles#new'
   # get 'password_resets/new'
   # get 'password_resets/create'
-    root "sessions#welcome"
+    # root "sessions#welcome"
        
     get 'login', to: 'sessions#new'   
     post 'login', to: 'sessions#create'   

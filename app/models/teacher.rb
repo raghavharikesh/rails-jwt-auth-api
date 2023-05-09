@@ -16,6 +16,8 @@ class Teacher < ApplicationRecord
 	  	 if self.subject.nil?
 	  	 	self.subject = " before_update MATH"
 	  	 end 
-	end  
+	end 
+
+	# scope :with_long_name, -> { where("LENGTH(name) > 4") } 
 
 end

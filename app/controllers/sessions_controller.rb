@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-  def new
+  def welcome
+     HellojojJob.set(wait: 15.seconds).perform_later
   end
   def create
 

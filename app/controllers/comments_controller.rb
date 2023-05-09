@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
    end
 
    def destroy
-    @comment.destroy
+    @comment.destroy!
     redirect_to teacher_path, notice: "Comment has been delete succesfully"
    end
 
