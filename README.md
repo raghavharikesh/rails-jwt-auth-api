@@ -1,24 +1,34 @@
-# README
+# Rails JWT Auth API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Modern, secure, and production-ready JWT Authentication API built with Ruby on Rails 8.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- User Registration & Login
+- Secure JWT Authentication
+- RESTful API with versioning
+- Clean architecture with Services & Serializers
+- Proper error handling
 
-* System dependencies
+## Tech Stack
 
-* Configuration
+- Ruby on Rails 8
+- PostgreSQL
+- JWT
+- Blueprinter (Serialization)
 
-* Database creation
+## Setup
 
-* Database initialization
+```bash
+# Clone the repo
+git clone https://github.com/raghavharikesh/rails-jwt-auth-api.git
+cd rails-jwt-auth-api
 
-* How to run the test suite
+# Install dependencies
+bundle install
 
-* Services (job queues, cache servers, search engines, etc.)
+# Setup database
+rails db:create db:migrate
 
-* Deployment instructions
-
-* ...
+# Copy environment variables
+cp .env.example .env
