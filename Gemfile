@@ -4,20 +4,22 @@ ruby "3.3.6"
 
 gem "rails", "~> 8.0.1"
 gem "pg"
-gem "puma"
+gem "puma", "~> 6.4"
 gem "bcrypt"
 
-# JWT & API
+# JWT & Security
 gem "jwt"
 gem "rack-cors"
 
+# Performance
+gem "bootsnap", require: false
+
 # Serialization
-gem "blueprinter"
+gem "jsonapi-serializer"
 
-# Pagination (optional but recommended)
-gem "pagy"
-
-# Security & Config
+# Optional but Recommended
+gem "oj"                    # Faster JSON parsing & rendering
+gem "pagy"                  # Pagination
 gem "dotenv-rails"
 
 group :development, :test do
